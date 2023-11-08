@@ -41,14 +41,12 @@ class Queue {
 
   dequeue() {
     if (this.isEmpty()) {
-      return null;
+      throw new Error('queue is empty!');
     }
     let removedNode = this.first.val;
     this.first = this.first.next;
     this.size--;
-    if (this.isEmpty()) {
-      this.last = null;
-    }
+
     return removedNode;
   }
 
